@@ -1,0 +1,5 @@
+<div id="appointments">
+  <% @appointments.each do |apt| %>
+    <%= render 'appointments/appointment_show', apt: apt%>
+  <% end %>
+</div>

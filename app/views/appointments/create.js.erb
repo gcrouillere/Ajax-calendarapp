@@ -1,0 +1,17 @@
+function refreshForm(innerHTML) {
+  const newAppointmentForm = document.getElementById('new_appointment');
+  newAppointmentForm.innerHTML = innerHTML;
+}
+
+function addAppointement(reviewHTML) {
+  const appointments = document.getElementById('appointments');
+  appointments.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @appointment.errors.any? %>
+  refreshForm('<%= j render "appointments/appointment_form", appointment: @appointment %>');
+<% else %>
+  addAppointement('<%= j render "appointments/appointment_show", apt: @appointment %>');
+  $('#appointment_title').val('');
+  $('#appointment_apt_time').val('');
+<% end %>

@@ -1,0 +1,7 @@
+<%= simple_form_for @appointment, remote: :true do |f| %>
+  <%= f.text_field :title %>
+  <%= appointments_errors(@appointment, :title) %>
+  <%= f.text_field :apt_time %>
+  <%= appointments_errors(@appointment, :apt_time) %>
+  <%= f.submit 'Submit Appointment'%>
+<% end %>
